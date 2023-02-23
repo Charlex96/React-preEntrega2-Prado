@@ -1,0 +1,16 @@
+//general conf and vars
+@import "./conf";
+@import "./global.scss";
+
+
+//components
+@import "../../components/NavBar/styles.scss";
+@import "../../components/CardWidget/styles.scss";
+@import "../../components/Welcome/styles.scss";
+@import "../../components/ItemListContainer/styles.scss";
+@import "../../components/ItemList/styles.scss";
+@import "../../components/Item/styles.scss";
+
+
+//pages
+// @import "../../pages/Home/styles.scss";

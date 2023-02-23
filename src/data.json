@@ -1,0 +1,47 @@
+[
+    {
+        "id": 1,
+        "name": "Sudadera 1",
+        "price": 60,
+        "description":
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum deleniti aut dignissimos explicabo ab, cumque eligendi ducimus numquam quibusdam minima.",
+        "stock": 10,
+        "category": "Hombre"
+    },
+    {
+        "id": 2,
+        "name": "Sudadera 2",
+        "price": 70,
+        "description":
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum deleniti aut dignissimos explicabo ab, cumque eligendi ducimus numquam quibusdam minima.",
+        "stock": 5,
+        "category": "Mujer"
+    },
+    {
+        "id": 3,
+        "name": "Sudadera 3",
+        "price": 90,
+        "description":
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum deleniti aut dignissimos explicabo ab, cumque eligendi ducimus numquam quibusdam minima.",
+        "stock": 3,
+        "category": "Hombre"
+    },
+    {
+        "id": 4,
+        "name": "Sudadera 4",
+        "price": 10,
+        "description":
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum deleniti aut dignissimos explicabo ab, cumque eligendi ducimus numquam quibusdam minima.",
+        "stock": 20,
+        "category": "Niño"
+    },
+    {
+        "id": 5,
+        "name": "Sudadera 5",
+        "price": 30,
+        "description":
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum deleniti aut dignissimos explicabo ab, cumque eligendi ducimus numquam quibusdam minima.",
+        "stock": 6,
+        "category": "Niño"
+    }
+]

@@ -1,0 +1,37 @@
+
+/*|---------------|App Color Schema|---------------*/
+$BLUE: rgba(76, 185, 252, 0.705);
+$PINK: #B51942;
+$GRAY: rgba(223, 223, 223, 0.269);
+$SOMBRA: rgba(75, 75, 75, 0.235);
+
+$GREEN: green;
+$RED: rgb(249, 70, 70);
+
+$COLOR-BTN-COUNT-BORDER: rgb(200, 200, 200);
+
+
+/*|---------------|BREAKPOINTS|---------------*/
+
+// Usage example:  @media #{$BREAKPOINT-DESK}
+
+$BREAKPOINT-DESK: "only screen and (min-width: 1280px)";
+$BREAKPOINT-TABLET-LAND: "only screen and (min-width: 975px)";
+$BREAKPOINT-TABLET: "only screen and (min-width: 600px)";
+$BREAKPOINT-MOBILE-LAND: "only screen and (min-width: 480px)";
+
+
+/*|---------------|MIXINS|---------------*/
+
+@mixin btn ($padding, $font-size){
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    margin: 20px;
+    padding: $padding;
+    font-size: $font-size;
+    border: none;
+    cursor: pointer;
+    border: 2px solid transparent;
+
+}

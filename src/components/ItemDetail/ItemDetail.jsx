@@ -1,7 +1,10 @@
-import React from 'react'
+import React from 'react';
 import { useParams } from "react-router-dom";
-import { Link } from 'react-router-dom'
-import ropaImage from '/src/assets/imgs/ropa.jpg'
+import { Link } from 'react-router-dom';
+import ropaImage from '/src/assets/imgs/ropa.jpg';
+import { useEffect, useState } from "react";
+import { doc, getDoc, getFirestore } from "firebase/firestore";
+import ItemCount from '../ItemCount/ItemCount';
 
 
 const ItemDetail = ({ropas}) => {
@@ -9,6 +12,26 @@ const ItemDetail = ({ropas}) => {
   
   const { id } = useParams();
   console.log(id);
+
+  const [producto, setProducto] = useState([]);
+
+
+  useEffect(() => {
+    const db = getFirestore();
+
+    const ropaRef = doc(db, "ropa", `${id}`);
+
+    getDoc(ropaRef).then((snapshot) => {
+      if (snapshot.exists()) {
+        setProducto(snapshot.data());
+      } else {
+        console.log("No such document!");
+      }
+    });
+  }, []);
+
+  // console.log(producto.name);
+
 
   const ropaFilter = ropas.filter((ropa) => ropa.id == id);
 
@@ -32,18 +55,12 @@ const ItemDetail = ({ropas}) => {
                   <p className='txt-price'>Precio: U$D {ropa.price}</p>
               </div>
 
-  
-              <div className='card-btn'>
-
-                <div className='container-count'>
-                  <button> - </button>
-                  <h2>1</h2>
-                  <button> + </button>
-                </div>
-                
-                <p>cantidad seleccionada: 1</p>
-                <button className='btn-access'>Comprar</button>
-              </div>
+              <ItemCount
+                stock = {ropa.stock}
+                id = {ropa.id}
+                price = {ropa.price}
+                name = {ropa.name}
+              />
   
             </div>
 

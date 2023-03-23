@@ -1,11 +1,12 @@
 .card-container{
-    margin: 60px auto;
-    width: 220px;
-    height: 100%;
-    background-color: $GRAY;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 1px 1px $SOMBRA;
+    // margin: 60px auto;
+    // width: 220px;
+    // height: 100%;
+    // background-color: $GRAY;
+    // border-radius: 10px;
+    // padding: 20px;
+    // box-shadow: 1px 1px $SOMBRA;
+    @include card(220px);
     .card{
         width: 100%;
         text-align: center;

@@ -31,16 +31,16 @@ const NavBar = () => {
 
                     <div className="dropdown-content">
 
-                        <Link to={`/category/${"Hombre"}`}>
-                            <a href="#">Hombre</a>
+                        <Link to={`/category/${"Hombre"}`} style = {{textDecoration: 'none'}}>
+                            <p href="#">Hombre</p>
                         </Link>
 
-                        <Link to={`/category/${"Mujer"}`}>
-                            <a href="#">Mujer</a>
+                        <Link to={`/category/${"Mujer"}`} style = {{textDecoration: 'none'}}>
+                            <p href="#">Mujer</p>
                         </Link>
 
-                        <Link to={`/category/${"Niño"}`}>
-                            <a href="#">Niños</a>
+                        <Link to={`/category/${"Niño"}`} style = {{textDecoration: 'none'}}>
+                            <p href="#">Niños</p>
                         </Link>
 
                     </div>
@@ -49,7 +49,10 @@ const NavBar = () => {
 
             </div>
 
-            <Cartwidget/>
+            <Link to={"/cart"} className='card-title'>
+                <Cartwidget/>
+            </Link>
+
 
         </section>
     </>

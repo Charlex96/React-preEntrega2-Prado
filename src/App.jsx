@@ -1,31 +1,38 @@
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Cart from './components/Cart/Cart'
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer'
 import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 import NavBar from './components/NavBar/NavBar'
 import Welcome from './components/Welcome/Welcome'
+import { ShoppingCartProvider } from './context/ShoppingCartContext'
 
 function App() {
 
   return (
 
-    <BrowserRouter>
-    
-      <NavBar/>
+    <ShoppingCartProvider>
 
-      <Routes>
+      <BrowserRouter>
       
-        <Route exact path='/'                   element={<Welcome/>}></Route>
-        <Route exact path="/catalogue"          element={<ItemListContainer />} />
-        <Route exact path="/category/:category" element={<ItemListContainer />}/>
+        <NavBar/>
 
-        <Route exact path="/item/:id"           element={<ItemDetailContainer />} />
-        {/* <Route exact path="/cart"               element={<Cart />} /> */}
+        <Routes>
+        
+          <Route exact path='/'                   element={<Welcome/>}></Route>
+          <Route exact path="/catalogue"          element={<ItemListContainer />} />
+          <Route exact path="/category/:category" element={<ItemListContainer />}/>
 
-      </Routes>
+          <Route exact path="/item/:id"           element={<ItemDetailContainer />} />
+          <Route exact path="/cart"               element={<Cart />} />
 
+        </Routes>
+
+        
+      </BrowserRouter>
       
-    </BrowserRouter>
+    </ShoppingCartProvider>
+
 
   )
 }

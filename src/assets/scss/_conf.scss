@@ -35,3 +35,13 @@ $BREAKPOINT-MOBILE-LAND: "only screen and (min-width: 480px)";
     border: 2px solid transparent;
 
 }
+
+@mixin card ($width){
+    margin: 60px auto;
+    width: $width;
+    height: 100%;
+    background-color: $GRAY;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 1px 1px $SOMBRA;
+}

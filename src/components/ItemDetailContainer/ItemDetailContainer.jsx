@@ -1,6 +1,5 @@
 import React from 'react'
 import ItemDetail from '../ItemDetail/ItemDetail';
-import Data from '/src/data.json';
 import { useState, useEffect } from "react";
 import { getFirestore, collection, getDocs } from "firebase/firestore";
 

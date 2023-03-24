@@ -1,6 +1,5 @@
 import React from 'react';
 import { useParams } from "react-router-dom";
-import { Link } from 'react-router-dom';
 import ropaImage from '/src/assets/imgs/ropa.jpg';
 import { useEffect, useState } from "react";
 import { doc, getDoc, getFirestore } from "firebase/firestore";
@@ -9,9 +8,7 @@ import ItemCount from '../ItemCount/ItemCount';
 
 const ItemDetail = ({ropas}) => {
 
-  
   const { id } = useParams();
-  console.log(id);
 
   const [producto, setProducto] = useState([]);
 
@@ -30,8 +27,6 @@ const ItemDetail = ({ropas}) => {
     });
   }, []);
 
-  // console.log(producto.name);
-
 
   const ropaFilter = ropas.filter((ropa) => ropa.id == id);
 
@@ -44,7 +39,7 @@ const ItemDetail = ({ropas}) => {
 
           <div className='card'>
               <div className='card-seccion1'>
-                  <img src={ropaImage} alt="Imagen" />
+                  <img src={ropa.image} alt="Imagen" />
               </div>
   
               <div className='card-seccion2'>
@@ -60,6 +55,7 @@ const ItemDetail = ({ropas}) => {
                 id = {ropa.id}
                 price = {ropa.price}
                 name = {ropa.name}
+                image = {ropa.image}
               />
   
             </div>
@@ -68,7 +64,7 @@ const ItemDetail = ({ropas}) => {
       ))}
 
 
-</>
+    </>
   )
 }
 

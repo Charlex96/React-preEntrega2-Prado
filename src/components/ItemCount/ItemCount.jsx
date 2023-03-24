@@ -1,9 +1,8 @@
 import React, { useContext, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { CartContext } from '../../context/ShoppingCartContext'
-import DialogUI from '../Dialog/DialogUI';
 
-const ItemCount = ({stock, id, price, name}) => {
+const ItemCount = ({stock, id, price, name, image}) => {
   const [cart, setCart] = useContext(CartContext);
   const [count, setCount] = useState(1);
 
@@ -27,7 +26,7 @@ const ItemCount = ({stock, id, price, name}) => {
           }
         });
       } else {
-        return [...currItems, { id, quantity: count, price, name }];
+        return [...currItems, { id, quantity: count, price, name, image }];
       }
     });
   };

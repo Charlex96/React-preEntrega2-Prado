@@ -17,7 +17,10 @@ const SendOrder = ({cartItem, total}) => {
     const [cantidad, setCantidad] = useState("");
     const [totalPrecio, setTotalPrecio] = useState("");
 
+
     const [habilitado, setHabilitado] = useState(true);
+
+    // let message = '';
 
 
     const handleClickOpen = () => {
@@ -42,9 +45,11 @@ const SendOrder = ({cartItem, total}) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         if (firstName === "" || lastName === "" || email === "") {
-        alert("No pueden existir campos vacios");
+            alert("No pueden existir campos vacios");
+            
         } else {
-        addDoc(ordersCollection, order).then(({ id }) => setOrderId(id));
+            addDoc(ordersCollection, order).then(({ id }) => setOrderId(id));
+
         }
         setEmail(" ");
     };
@@ -99,6 +104,7 @@ const SendOrder = ({cartItem, total}) => {
                                 setCantidad(cartItem);
                                 setTotalPrecio(total);
                                 handleClickOpen();
+                                
                             }}
                             >Enviar
                         </button>
@@ -109,6 +115,7 @@ const SendOrder = ({cartItem, total}) => {
                 <DialogUI
                     open = {open}
                     handleClose = {handleClose}
+                    message = {'Gracias por tu compra! Agradecemos tu apoyo y esperamos que disfrutes mucho tu nueva adquisición.'}
                 
                 />
 

@@ -10,6 +10,7 @@ const ItemList = ({ropas}) => {
           <Item
             key={ropa.id}
             id={ropa.id}
+            image = {ropa.image}
             name={ropa.name}
             description={ropa.description}
             price={ropa.price}

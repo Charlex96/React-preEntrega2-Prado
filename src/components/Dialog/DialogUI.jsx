@@ -9,7 +9,7 @@ import DialogTitle from '@mui/material/DialogTitle';
 import { Link } from 'react-router-dom'
 
 
-const DialogUI = ({open, handleClose}) => {
+const DialogUI = ({open, handleClose, message}) => {
 
     return (
         <>
@@ -24,13 +24,18 @@ const DialogUI = ({open, handleClose}) => {
 
                 <DialogContent>
                     <DialogContentText id="alert-dialog-description">
-                        Gracias por tu compra! Agradecemos tu apoyo y esperamos que disfrutes mucho tu nueva adquisición.
+                        {message}
                     </DialogContentText>
                 </DialogContent>
 
                 <DialogActions>
                     {/* <Button onClick={handleClose}>Disagree</Button> */}
 
+                    <Link to={"/compras"} style = {{textDecoration: 'none'}}>
+                        <Button onClick={handleClose} autoFocus>
+                            COMPRAS
+                        </Button>
+                    </Link>
                     <Link to={"/catalogue"} style = {{textDecoration: 'none'}}>
                         <Button onClick={handleClose} autoFocus>
                             Catálogo

@@ -47,36 +47,43 @@ const Cart = () => {
 
       </div>
 
-      {cart.map((item) => {
+      <div className='item-list'>
 
-        let subtotal = (item.quantity) * (item.price);
+        {cart.map((item) => {
 
-        return(
+          let subtotal = (item.quantity) * (item.price);
 
-          <section className='card-container' key={item.id}>
+          console.log(item.image);
 
-            <div className='card'>
-                <div className='card-seccion1'>
-                    <img src='' alt="Imagen" />
-                </div>
+          return(
 
-                <div className='card-seccion2'>
-                    <h2>{item.name}</h2>
-                    <p>Cantidad: {item.quantity}</p>
-                    <p>Precio: U$D {item.price}</p>
-                    <p>Subtotal: U$D {subtotal}</p>
-                </div>
+            <section className='card-container' key={item.id}>
 
-                <div className='card-btn'>
-                    <button key={item.id} className='btn-access' onClick={() => eliminarItem(item.id)}>Eliminar</button>
-                </div>
+              <div className='card'>
+                  <div className='card-seccion1'>
+                      <img src={item.image} alt="Imagen" />
+                  </div>
 
-            </div>       
-          </section>
+                  <div className='card-seccion2'>
+                      <h2>{item.name}</h2>
+                      <p>Cantidad: {item.quantity}</p>
+                      <p>Precio: U$D {item.price}</p>
+                      <p>Subtotal: U$D {subtotal}</p>
+                  </div>
 
-        );
+                  <div className='card-btn'>
+                      <button key={item.id} className='btn-access' onClick={() => eliminarItem(item.id)}>Eliminar</button>
+                  </div>
 
-      })}
+              </div>       
+            </section>
+
+          );
+
+        })}
+        
+      </div>
+
 
       <SendOrder 
         cartItem = {cantidad}

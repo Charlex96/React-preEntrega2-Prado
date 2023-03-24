@@ -1,8 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import ropa from '/src/assets/imgs/ropa.jpg'
 
-const Item = ({id, name, stock, category}) => {
+
+const Item = ({id,image, name, stock, category}) => {
     return (
         <>
 
@@ -10,7 +10,7 @@ const Item = ({id, name, stock, category}) => {
 
                 <div className='card'>
                     <div className='card-seccion1'>
-                        <img src={ropa} alt="Imagen" />
+                        <img src={image} alt="Imagen" />
                     </div>
 
                     <div className='card-seccion2'>
